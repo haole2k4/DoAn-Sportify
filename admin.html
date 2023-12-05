@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="d-block my-5">
+
+            <h2>Wellcome Admin</h2>
+            <button class="btn btn-sm btn-success">Log Out</button>
+        </div>
+
+
+        <div class="table-responsive-md">
+            <table class="table table-striped my-4">
+                <h1>Accounts</h1>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Function</th>
+                    </tr>
+                </thead>
+
+                <tbody class="data-user">
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <hr class="my-5">
+
+        
+        <div class="table-responsive-md">
+            <table class="table table-striped my-4">
+                <h1>Accounts Premium</h1>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Function</th>
+                    </tr>
+                </thead>
+
+                <tbody class="data-user-premium">
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <script>
+        let accounts = [
+            {
+                firstName: "Nakano",
+                lastName: "Ichika",
+                email: "user1@gmail.com",
+                password: "password1",
+            },
+            {
+                firstName: "Nakano",
+                lastName: "Nino",
+                email: "user2@gmail.com",
+                password: "password1",
+            },
+            {
+                firstName: "Nakano",
+                lastName: "Miku",
+                email: "user3@gmail.com",
+                password: "password1",
+            },
+            {
+                firstName: "Nakano",
+                lastName: "Yotsuba",
+                email: "user4@gmail.com",
+                password: "password1",
+            },
+            {
+                firstName: "Nakano",
+                lastName: "Itsuki",
+                email: "user5@gmail.com",
+                password: "password1",
+            },
+
+        ];
+
+
+        let premiumAccounts = [
+            {
+
+                firstName: "Nakano",
+                lastName: "Itsuki",
+                email: "user5@gmail.com",
+                password: "password1",
+            },
+            {
+
+                firstName: "Nakano",
+                lastName: "Itsuki",
+                email: "user5@gmail.com",
+                password: "password1",
+            },
+            {
+
+                firstName: "Nakano",
+                lastName: "Itsuki",
+                email: "user5@gmail.com",
+                password: "password1",
+            },
+
+        ];
+
+
+
+        function displayDataTable() {
+            const table = document.querySelector('.data-user');
+
+            for (let i = 0; i < accounts.length; i++) {
+                const row = table.insertRow(-1);
+
+                const sttCell = row.insertCell(0);
+                sttCell.innerHTML = i + 1;
+
+                const firstNameCell = row.insertCell(1);
+                firstNameCell.innerHTML = accounts[i].firstName;
+
+                const lastNameCell = row.insertCell(2);
+                lastNameCell.innerHTML = accounts[i].lastName;
+
+                const emailCell = row.insertCell(3);
+                emailCell.innerHTML = accounts[i].email;
+
+                const passwordCell = row.insertCell(4);
+                passwordCell.innerHTML = accounts[i].password;
+
+                const functionCell = row.insertCell(5);
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'btn btn-danger btn-sm';
+                button.innerHTML = 'Delete';
+                button.onclick = function () {
+                    deleteRow(this);
+                };
+                functionCell.appendChild(button);
+            }
+        }
+
+
+        function displayDataTablePremium() {
+            const table = document.querySelector('.data-user-premium');
+
+            for (let i = 0; i < premiumAccounts.length; i++) {
+                const row = table.insertRow(-1);
+
+                const sttCell = row.insertCell(0);
+                sttCell.innerHTML = i + 1;
+
+                const firstNameCell = row.insertCell(1);
+                firstNameCell.innerHTML = premiumAccounts[i].firstName;
+
+                const lastNameCell = row.insertCell(2);
+                lastNameCell.innerHTML = premiumAccounts[i].lastName;
+
+                const emailCell = row.insertCell(3);
+                emailCell.innerHTML = premiumAccounts[i].email;
+
+                const passwordCell = row.insertCell(4);
+                passwordCell.innerHTML = premiumAccounts[i].password;
+
+                const functionCell = row.insertCell(5);
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'btn btn-danger btn-sm';
+                button.innerHTML = 'Delete';
+                button.onclick = function () {
+                    deleteRow(this);
+                };
+                functionCell.appendChild(button);
+            }
+        }
+
+
+
+        function deleteRow(btn) {
+            var row = btn.parentNode.parentNode;
+            var rowIndex = row.rowIndex;
+            var table = row.parentNode.parentNode;
+
+            if (confirm("Bạn có chắc chắn muốn xóa dòng này?")) {
+                table.deleteRow(rowIndex);
+
+                // Cập nhật số thứ tự các dòng
+                for (var i = rowIndex; i < table.rows.length; i++) {
+                    table.rows[i].cells[0].innerHTML = i;
+                }
+            }
+        }
+
+
+        window.onload = displayDataTable();
+        window.onload = displayDataTablePremium();
+    </script>
+
+</body>
+
+</html>
