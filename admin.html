@@ -33,7 +33,7 @@
                 </thead>
 
                 <tbody class="data-user">
-
+                    
 
                 </tbody>
             </table>
@@ -42,7 +42,7 @@
 
         <hr class="my-5">
 
-        
+
         <div class="table-responsive-md">
             <table class="table table-striped my-4">
                 <h1>Accounts Premium</h1>
@@ -72,65 +72,89 @@
 
 
     <script>
-        let accounts = [
-            {
-                firstName: "Nakano",
-                lastName: "Ichika",
-                email: "user1@gmail.com",
-                password: "password1",
-            },
-            {
-                firstName: "Nakano",
-                lastName: "Nino",
-                email: "user2@gmail.com",
-                password: "password1",
-            },
-            {
-                firstName: "Nakano",
-                lastName: "Miku",
-                email: "user3@gmail.com",
-                password: "password1",
-            },
-            {
-                firstName: "Nakano",
-                lastName: "Yotsuba",
-                email: "user4@gmail.com",
-                password: "password1",
-            },
-            {
-                firstName: "Nakano",
-                lastName: "Itsuki",
-                email: "user5@gmail.com",
-                password: "password1",
-            },
+        function getAccountsFromLocalStorage() {
+            let string = localStorage.getItem('accounts');
+            if (string == null || string === '') {
+                // Trả về mảng mặc định tạo sẵn nếu local storage bị rỗng
+                return [
+                    {
+                        firstName: "Nakano",
+                        lastName: "Ichika",
+                        email: "user1@gmail.com",
+                        password: "password1",
+                    },
+                    {
+                        firstName: "Nakano",
+                        lastName: "Nino",
+                        email: "user2@gmail.com",
+                        password: "password1",
+                    },
+                    {
+                        firstName: "Nakano",
+                        lastName: "Miku",
+                        email: "user3@gmail.com",
+                        password: "password1",
+                    },
+                    {
+                        firstName: "Nakano",
+                        lastName: "Yotsuba",
+                        email: "user4@gmail.com",
+                        password: "password1",
+                    },
+                    {
+                        firstName: "Nakano",
+                        lastName: "Itsuki",
+                        email: "user5@gmail.com",
+                        password: "password1",
+                    },
+                ];
+            }
+            let accounts = JSON.parse(string);
+            return accounts;
+        }
+        function getPremiumAccountsFromLocalStorage() {
+            let string = localStorage.getItem('premiumAccounts');
+            if (string == null || string === '') {
+                // Trả về mảng mặc định tạo sẵn nếu local storage bị rỗng
+                return [
+                    {
 
-        ];
+                        firstName: "Nakano",
+                        lastName: "Itsuki",
+                        email: "user5@gmail.com",
+                        password: "password1",
+                    },
+                    {
 
+                        firstName: "Nakano",
+                        lastName: "Itsuki",
+                        email: "user5@gmail.com",
+                        password: "password1",
+                    },
+                    {
 
-        let premiumAccounts = [
-            {
+                        firstName: "Nakano",
+                        lastName: "Itsuki",
+                        email: "user5@gmail.com",
+                        password: "password1",
+                    },
+                ];
+            }
+            let premiumAccounts = JSON.parse(string);
+            return premiumAccounts;
+        }
 
-                firstName: "Nakano",
-                lastName: "Itsuki",
-                email: "user5@gmail.com",
-                password: "password1",
-            },
-            {
+        let accounts = getAccountsFromLocalStorage();
+        let premiumAccounts = getPremiumAccountsFromLocalStorage();
 
-                firstName: "Nakano",
-                lastName: "Itsuki",
-                email: "user5@gmail.com",
-                password: "password1",
-            },
-            {
-
-                firstName: "Nakano",
-                lastName: "Itsuki",
-                email: "user5@gmail.com",
-                password: "password1",
-            },
-
-        ];
+        function storeAccountsInLocalStorage() {
+            let string = JSON.stringify(accounts);
+            localStorage.setItem('accounts', string);
+        }
+        function storeAccountsPremiumInLocalStorage() {
+            let string = JSON.stringify(premiumAccounts);
+            localStorage.setItem('premiumAccounts', string);
+        }
 
 
 
@@ -169,6 +193,7 @@
 
 
         function displayDataTablePremium() {
+            let premiumAccounts = getPremiumAccountsFromLocalStorage();
             const table = document.querySelector('.data-user-premium');
 
             for (let i = 0; i < premiumAccounts.length; i++) {
@@ -199,28 +224,31 @@
                 };
                 functionCell.appendChild(button);
             }
+
         }
 
 
 
         function deleteRow(btn) {
             var row = btn.parentNode.parentNode;
-            var rowIndex = row.rowIndex;
+            var rowIndex = row.rowIndex; // lấy chỉ số của hàng được chọn
             var table = row.parentNode.parentNode;
 
-            if (confirm("Bạn có chắc chắn muốn xóa dòng này?")) {
+            if (confirm("Do you want to delete this ?")) {
+                accounts.splice(rowIndex - 1, 1);
+                storeAccountsInLocalStorage();
                 table.deleteRow(rowIndex);
-
-                // Cập nhật số thứ tự các dòng
                 for (var i = rowIndex; i < table.rows.length; i++) {
                     table.rows[i].cells[0].innerHTML = i;
                 }
             }
+
         }
 
 
         window.onload = displayDataTable();
         window.onload = displayDataTablePremium();
+
     </script>
 
 </body>
