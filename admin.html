@@ -145,7 +145,7 @@
         }
 
         let accounts = getAccountsFromLocalStorage();
-        
+
         let premiumAccounts = getPremiumAccountsFromLocalStorage();
 
         function storeAccountsInLocalStorage() {
@@ -157,7 +157,38 @@
             localStorage.setItem('premiumAccounts', string);
         }
 
-
+        // let accounts = [
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Ichika",
+        //         email: "user1@gmail.com",
+        //         password: "password1",
+        //     },
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Nino",
+        //         email: "user2@gmail.com",
+        //         password: "password1",
+        //     },
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Miku",
+        //         email: "user3@gmail.com",
+        //         password: "password1",
+        //     },
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Yotsuba",
+        //         email: "user4@gmail.com",
+        //         password: "password1",
+        //     },
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Itsuki",
+        //         email: "user5@gmail.com",
+        //         password: "password1",
+        //     },
+        // ];
 
         function displayDataTable() {
             const table = document.querySelector('.data-user');
