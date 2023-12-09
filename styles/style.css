@@ -638,7 +638,7 @@ body,
   width: 35px;
   height: 35px;
   border-radius: 24px;
-  /* background-color: #fff; */
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
