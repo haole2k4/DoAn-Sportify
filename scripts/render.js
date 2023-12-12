@@ -172,9 +172,7 @@ function renderPlaylist() {
     for (let i = 0; i < playlists.length; i++) {
         const h4 = document.createElement("h4");
         h4.classList.add("mb-3");
-        h4.innerHTML = `
-      <a href="#"><b>${playlists[i].playlistName}</b></a>
-      `;
+        h4.innerHTML = `<a href="#"><b>${playlists[i].playlistName}</b></a>`;
         const see_all = document.createElement("a");
         see_all.classList.add("see-all");
         see_all.innerText = "SEE-ALL";
@@ -204,5 +202,4 @@ function renderPlaylist() {
         feedPlaylist[i].appendChild(unorderedList);
     }
 }
-
 window.onload = renderPlaylist();
