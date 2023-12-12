@@ -40,8 +40,8 @@ const sectionOneObserver = new IntersectionObserver(function (
 sectionOneObserver.observe(sectionOne);
 
 function playAudio(audioname) {
-  //var audioPath = "./mp3/1.mp3";
-  var audioPath = "./mp3/" + audioname + ".mp3";
+  //var audioPath = "./assets/audio/1.mp3";
+  var audioPath = "./assets/audio/" + audioname + ".mp3";
   var audioPlayer = document.getElementById("audioPlayer");
   var audioSource = document.getElementById("audioSource");
 
