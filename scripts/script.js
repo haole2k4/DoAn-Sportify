@@ -189,3 +189,4 @@ progressSlider.addEventListener("touchend", function () {
 
  
 
+//day la script
