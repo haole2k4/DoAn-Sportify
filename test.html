@@ -1,0 +1,346 @@
+<script>
+      function renderPlaylists() {
+    const _this = this; // thay the this
+    for (let i = 0; i < feedPlaylists.length; i++) {
+      let htmls = _this.playlists[i].map(song => {
+        return `<li>
+        <img src="${song.songImg}">
+        <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+            viewBox="0 0 24 24">
+            <path 
+              d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+            </path>
+          </svg></button>
+        <span>${song.songName}</span>
+        <p><br>${song.songArtist}</p>
+      </li>`
+        }
+      )
+      feedPlaylists[i].innerHTML = htmls;
+    }
+  },
+</script>
+
+
+
+<!-- Your top mixes -->
+<section class="feedPlaylist">
+  <h4 class="mb-3"><a href="#"><b>Your top mixes</b></a></h4>
+  <a class="see-all" href="#">SEE-ALL</a>
+  <br>
+  <br>
+  <ul class="playlists">
+    <li>
+      <img src="./assets/7.jpeg">
+      <!-- Sửa nút để phát file mp3 -->
+      <button type="button" class="btn me-3" onclick="playAudio(1)">
+        <svg role="img" height="24" width="24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg>
+      </button>
+      <span>Pop Mix</span>
+      <p><br>SHY Martin, Lauv, Sia and more</p>
+    </li>
+
+    <!-- Thêm thẻ audio để phát file mp3 -->
+    <audio id="audioPlayer" controls style="display: none;">
+      <!-- Trình duyệt không hỗ trợ thẻ audio. -->
+      <source id="audioSource" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <li>
+      <img src="./assets/8.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Chill Mix</span>
+      <p><br>Lauv, Oh Wonder, The Chainsmokers and more</p>
+    </li>
+
+    <li>
+      <img src="./assets/9.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Moody Mix</span>
+      <p><br>Charlie Puth, Oh Wonder, Alec Benjamin and more</p>
+    </li>
+
+    <li>
+      <img src="./assets/10.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Latin Mix</span>
+      <p><br>Timothy Infinite, Shakira and more</p>
+    </li>
+
+    <li>
+      <img src="./assets/11.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Hindi Mix</span>
+      <p><br>Ritviz, Nuclea, Atif Aslam and more</p>
+    </li>
+
+    <li>
+      <img src="./assets/12.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>2010s Mix</span>
+      <p><br>The Fat Rat, Alan Walker, The Chainsmokers and more</p>
+    </li>
+  </ul>
+</section>
+
+<!--recently played-->
+<section class="feedPlaylist">
+  <h4 class="mb-3"><a href="#">Recently Played</a></h4>
+  <a class="see-all" href="#">SEE-ALL</a>
+  <br>
+  <br>
+  <ul class="playlists">
+    <li>
+      <img src="./assets/1.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>sleep deprived</span>
+      <p><br>i'll tell you a story before it tells itself</p>
+    </li>
+
+    <li>
+      <img src="./assets/2.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>adrenaline rush</span>
+      <p><br>for the night when you've piled up everything and it's deadline tomorrow</p>
+    </li>
+
+    <li>
+      <img src="./assets/3.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>impulse</span>
+      <p><br>⚠️ the neighbors are gonna call the cops</p>
+    </li>
+
+    <li>
+      <img src="./assets/4.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>sixth gear</span>
+      <p><br>nothings gonna stop me now (lol, idk how to drive yet)</p>
+    </li>
+
+    <li>
+      <img src="./assets/5.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>3:14 am</span>
+      <p><br>and thoughts of past and future kept him awake</p>
+    </li>
+
+    <li>
+      <img src="./assets/6.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>serenity</span>
+      <p><br>is it tears or just the pouring rain?</p>
+    </li>
+  </ul>
+</section>
+
+<!--poular new releases-->
+<section class="feedPlaylist">
+  <h4 class="mb-3"><a href="#">Popular New releases</a></h4>
+  <a class="see-all" href="#">SEE-ALL</a>
+  <br>
+  <br>
+  <ul class="playlists">
+    <li>
+      <img src="./assets/celestial.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(2)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Celestial</span>
+      <p><br>Ed Shreeran</p>
+    </li>
+
+    <li>
+      <img src="./assets/this is why.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>this Is Why</span>
+      <p><br>Paramore</p>
+    </li>
+
+    <li>
+      <img src="./assets/igotissu.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>I GOT ISSUES</span>
+      <p><br>YG</p>
+    </li>
+
+    <li>
+      <img src="./assets/uhoh.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>uh oh</span>
+      <p><br>Tate McRae</p>
+    </li>
+
+    <li>
+      <img src="./assets/bodypaint.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Body Paint</span>
+      <p><br>Arctic Monkeys</p>
+    </li>
+  </ul>
+</section>
+
+<!--mood-->
+<section class="feedPlaylist">
+  <h4 class="mb-3"><a href="#">Mood</a></h4>
+  <a class="see-all" href="#">SEE-ALL</a>
+  <br>
+  <br>
+  <ul class="playlists">
+    <li>
+      <img src="./assets/moodbooster.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Mood Booster</span>
+      <p><br>Get happy with today's dose of feel-good songs!</p>
+    </li>
+
+    <li>
+      <img src="./assets/feelinggood.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Feelin' Good</span>
+      <p><br>Feel good with this positively timeless playlist!</p>
+    </li>
+
+    <li>
+      <img src="./assets/dark&stormy.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Dark & Stormy</span>
+      <p><br>Beautifully dark, dramatic tracks.</p>
+    </li>
+
+    <li>
+      <img src="./assets/feelgoodpiano.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Feel Good Piano</span>
+      <p><br>Happy vibes for an upbeat morning.</p>
+    </li>
+
+    <li>
+      <img src="./assets/feelingmyself.jpg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Feelin' Myself</span>
+      <p><br>The hip-hop playlist that's a whole mood. Art By Laci Jordan; Cover: Lakeyah</p>
+    </li>
+
+    <li>
+      <img src="./assets/chilltracks.jpeg">
+      <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+          </path>
+        </svg></button>
+      <span>Chill Tracks</span>
+      <p><br>Softer kinda dance.</p>
+    </li>
+  </ul>
+    <!--Popular new releases-->
+</section>
