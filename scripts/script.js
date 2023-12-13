@@ -212,13 +212,13 @@ let playlists = [
               songName: 'Chill Mix',
               songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
               songImg: './assets/playlistImage/8.jpeg',
-              songPath: '1',
+              songPath: '2',
           },
           {
-              songName: 'Moody Mix',
-              songArtist: 'Charlie Puth, Oh Wonder, Alec Benjamin and more',
-              songImg: './assets/playlistImage/9.jpeg',
-              songPath: '1',
+              songName: 'Everything gose on',
+              songArtist: 'Porter Robinson, League of Legends and more',
+              songImg: './assets/playlistImage/everythingGoesOn.jpg',
+              songPath: 'everythingGoesOn',
           },
           {
               songName: 'Latin Mix',
