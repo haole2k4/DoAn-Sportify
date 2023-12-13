@@ -231,3 +231,48 @@ lis.forEach((li) => {
     
   });
 });
+
+
+
+
+
+
+// example playlits
+// let playlists = [
+//   {
+//       playlistName: 'Your top mixes',
+//       premiumPlayists: false,
+//       songs: [
+//           {
+//               songName: 'Pop mix',
+//               songArtist: 'SHY Martin, Lauv, Sia and more',
+//               songImg: './assets/playlistImage/7.jpeg',
+//               songPath: '1',
+//           },
+//           {
+//               songName: 'Chill Mix',
+//               songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
+//               songImg: './assets/playlistImage/8.jpeg',
+//               songPath: '1',
+//           },
+//         ]
+//   },
+//   {
+//       playlistName: 'Recently Played',
+//       premiumPlayists: false,
+//       songs: [
+//           {
+//               songName: 'sleep deprived',
+//               songArtist: 'i will tell you a story before it tells itself',
+//               songImg: './assets/playlistImage/1.jpeg',
+//               songPath: '1',
+//           },
+//           {
+//               songName: 'adrenaline rush',
+//               songArtist: 'for the night when you have piled up everything and it is deadline tomorrow',
+//               songImg: './assets/playlistImage/2.jpeg',
+//               songPath: '1',
+//           },
+//       ]
+//   },
+// ];
