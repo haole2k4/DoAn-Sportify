@@ -199,7 +199,7 @@ progressSlider.addEventListener("touchend", function () {
 
 let playlists = [
   {
-      playlistName: 'Your top mixes',
+      playlistName: 'Your top songs',
       premiumPlayists: false,
       songs: [
           {
