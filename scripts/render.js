@@ -184,7 +184,7 @@ function renderPlaylist() {
             const li = document.createElement("li");
             li.innerHTML = `
         <img src="${playlists[i].songs[j].songImg}">
-        <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
+        <button type="button" class="btn me-3"><svg role="img" height="24" width="24"
             viewBox="0 0 24 24">
             <path
               d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
@@ -193,6 +193,7 @@ function renderPlaylist() {
         <span>${playlists[i].songs[j].songName}</span>
         <p><br>${playlists[i].songs[j].songArtist}</p>
         `;
+            li.setAttribute('onclick', 'playAudio(1)');
             unorderedList.appendChild(li);
         }
         feedPlaylist[i].appendChild(h4);
@@ -203,3 +204,30 @@ function renderPlaylist() {
     }
 }
 window.onload = renderPlaylist();
+
+
+
+let imgSongRender = document.querySelector('.song-image');
+let songNameRender = document.querySelector('.song-name');
+let songAuthor = document.querySelector('.author');
+
+
+
+const lis = document.querySelectorAll('.feedPlaylist li');
+
+
+lis.forEach((li) => {
+  li.addEventListener('click', () => {
+    const ul = li.parentNode;
+    const liIndex = Array.from(ul.children).indexOf(li);
+    const sectionElement = li.closest('.feedPlaylist');
+    const sectionIndex = Array.from(document.querySelectorAll('.feedPlaylist')).indexOf(sectionElement);
+    const button = li.querySelector('button');
+    button.innerHTML = `<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#1ed760"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>`;
+    button.style.opacity = "1";
+    imgSongRender.setAttribute('src', playlists[sectionIndex].songs[liIndex].songImg);
+    songNameRender.innerText =  playlists[sectionIndex].songs[liIndex].songName;
+    songAuthor.innerText =  playlists[sectionIndex].songs[liIndex].songArtist;
+    
+  });
+});
