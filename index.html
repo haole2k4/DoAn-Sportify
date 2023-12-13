@@ -341,7 +341,8 @@
                 </path>
               </svg></button>
 
-            <button type="button" class="btn playPause" onclick="togglePlayPause()"><svg role="img" height="24"
+              <!-- onclick="togglePlayPause()" -->
+            <button type="button" class="btn playPause" ><svg role="img" height="24"
                 width="24" viewBox="0 0 24 24">
                 <path
                   d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
@@ -357,7 +358,8 @@
 
           <div id="barraDeProgresso">
             <small id="currentTime">00:00</small>
-            <input type="range" id="progressSlider" min="0" max="100" value="0" step="1" oninput="updateProgressBar()">
+            <!-- oninput="updateProgressBar()" -->
+            <input type="range" id="progressSlider" min="0" max="100" value="0" step="1" >
             <small id="duration">00:00</small>
           </div>
 
@@ -388,7 +390,8 @@
             </svg></button>
 
           <div id="volume">
-            <button type="button" class="icones outrosDispositivos" onclick="toggleMute()">
+            <!-- onclick="toggleMute()" -->
+            <button type="button" class="icones outrosDispositivos"  id="button-volume-icon">
               <svg role="presentation" height="16" width="16" aria-label="Volume médio" id="volume-icon"
                 viewBox="0 0 16 16">
                 <path id="volume-path"
@@ -396,7 +399,8 @@
                 </path>
               </svg>
             </button>
-            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" oninput="changeVolume()">
+            <!-- oninput="changeVolume()" -->
+            <input type="range" id="volume-slider" class="button-volume-range" min="0" max="1" step="0.1" value="1" >
           </div>
 
         </div>
@@ -414,8 +418,8 @@
     </div>
   </div>
 
-  <script src="./scripts/script.js"></script>
-  <!-- <script src="./scripts/render.js"></script> -->
+  <!-- <script src="./scripts/script.js"></script> -->
+  <script src="./scripts/render.js"></script>
 </body>
 
 </html>
