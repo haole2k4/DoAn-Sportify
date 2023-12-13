@@ -372,14 +372,6 @@ let spotifyApp = {
 
 
 
-
-
-
-
-
-
-
-
         function togglePlayPause() {
             if (audioPlayer.paused) {
                 // Nếu âm thanh đang được tắt, bật nó lên và cập nhật biểu tượng SVG thành biểu tượng pause
