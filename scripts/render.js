@@ -748,6 +748,11 @@ let spotifyApp = {
         _this.feedPlaylistHeight = '990px';
         _this.feedPlaylistLiHeight = '31%';
       }
+
+      else if (width <= 429) {
+        _this.feedPlaylistHeight = '770px';
+        _this.feedPlaylistLiHeight = '29%';
+      }
     }
 
     // 1513 -> 1 hàng 330 98

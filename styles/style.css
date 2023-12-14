@@ -321,7 +321,7 @@ body,
   overflow-y: hidden;
   /* height: 380px; */
   /* overflow-x: auto; */
-
+  /* min-height: 770px; */
 }
 
 #principal #feed #main .feedPlaylist .playlists li {
@@ -340,6 +340,7 @@ body,
   height: 98%;
   /* height: 46%; */
   /* height: 31%; */
+  /* height: 29%; */
 }
 
 
