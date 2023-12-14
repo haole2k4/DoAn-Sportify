@@ -17,13 +17,17 @@ const durationElement = document.getElementById("duration");
 var isSeeking = false;
 const playPauseButton = document.querySelector(".btn.playPause");
 
+let backwardButton = document.querySelector('.icones.anterior');
+let forwardButton = document.querySelector('.icones.proximo');
 
+console.log(backwardButton);
+console.log(forwardButton);
 
 var buttonVolume = document.querySelector('#button-volume-icon');
 var buttonVolumeRange = document.querySelector('.button-volume-range');
 
 
-console.log(buttonVolumeRange);
+
 
 
 
@@ -438,6 +442,41 @@ let spotifyApp = {
         progressSlider.addEventListener("touchend", function () {
             isSeeking = false;
         });
+
+
+        // backwardButton and forwardButton
+
+
+        backwardButton.addEventListener('click', function () {
+
+            _this.currentSong -= 1;
+
+            if (_this.currentSong < 0) {
+                _this.currentSong = _this.playlists[_this.currentPlaylist].songs.length - 1;
+            }
+            loadCurrentSong();
+            playAudio(_this.playlists[_this.currentPlaylist].songs[_this.currentSong].songPath);
+
+
+        });
+
+        forwardButton.addEventListener('click', function () {
+
+
+            _this.currentSong += 1;
+
+            if (_this.currentSong > _this.playlists[_this.currentPlaylist].songs.length - 1) {
+                _this.currentSong = 0;
+            }
+        
+            loadCurrentSong();
+            playAudio(_this.playlists[_this.currentPlaylist].songs[_this.currentSong].songPath);
+
+        });
+
+
+
+
     },
 
 
