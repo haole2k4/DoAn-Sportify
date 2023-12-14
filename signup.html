@@ -176,7 +176,8 @@
       }
       var json = JSON.stringify(accounts);
       localStorage.setItem("accounts", json);
-      alert("Đăng ký thành công");
+      alert("Đăng ký thành công! Chào mừng bạn, " + lastName);
+      window.location.href = "index.html";
     }
   </script>
   
