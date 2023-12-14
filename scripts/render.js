@@ -676,12 +676,11 @@ let spotifyApp = {
 
 
         backwardButton.addEventListener('click', function () {
-
             _this.currentSong -= 1;
-
             if (_this.currentSong < 0) {
                 _this.currentSong = _this.playlists[_this.currentPlaylist].songs.length - 1;
             }
+            backgroundApp.style.backgroundColor = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].backgroundWebColor;
             loadCurrentSong();
             playAudio(_this.playlists[_this.currentPlaylist].songs[_this.currentSong].songPath);
 
@@ -689,14 +688,11 @@ let spotifyApp = {
         });
 
         forwardButton.addEventListener('click', function () {
-
-
             _this.currentSong += 1;
-
             if (_this.currentSong > _this.playlists[_this.currentPlaylist].songs.length - 1) {
                 _this.currentSong = 0;
             }
-
+            backgroundApp.style.backgroundColor = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].backgroundWebColor;
             loadCurrentSong();
             playAudio(_this.playlists[_this.currentPlaylist].songs[_this.currentSong].songPath);
 
