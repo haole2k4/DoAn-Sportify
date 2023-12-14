@@ -33,6 +33,8 @@ let spotifyApp = {
 
     currentPlaylist: 0,
     currentSong: 0,
+
+    
     prevPlaylist: 0,
     prevSong: 0,
 
