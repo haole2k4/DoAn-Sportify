@@ -649,6 +649,7 @@ let spotifyApp = {
       return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
     }
 
+
     // Update progress bar and time display when the audio time changes
     audioPlayer.addEventListener("timeupdate", function () {
       if (!isSeeking) {
@@ -713,14 +714,7 @@ let spotifyApp = {
 
 
 
-
-
-    // 1513 -> 1 hàng 330 98
-    // 797 -> 1512 2 hàng ngang 660 46
-    // 770 -> 796 3 hàng ngang  990 31
-    // 521 -> 769 2 hàng ngang mới đủ hiển thị
-    //  < 520 3 hàng ngang
-    window.addEventListener('resize', function () {
+    function adjustSize() {
       const width = window.innerWidth;
       if (width >= 1513) {
         _this.feedPlaylistHeight = '330px';
@@ -732,19 +726,25 @@ let spotifyApp = {
         _this.feedPlaylistHeight = '990px';
         _this.feedPlaylistLiHeight = '31%';
       }
-    });
+    }
 
+    // 1513 -> 1 hàng 330 98
+    // 797 -> 1512 2 hàng ngang 660 46
+    // 770 -> 796 3 hàng ngang  990 31
+    // 521 -> 769 2 hàng ngang mới đủ hiển thị
+    //  < 520 3 hàng ngang
 
     const adjustPlaylist = document.querySelectorAll('.playlists');
     let see_all = document.querySelectorAll('.see-all');
     const isclick = new Array(adjustPlaylist.length).fill(false);
 
-    
+
     see_all.forEach((see) => {
       see.addEventListener('click', (event) => {
         const index = Array.from(see_all).indexOf(event.target);
         // console.log(index);
         if (!isclick[index]) {
+          adjustSize();
           const li = adjustPlaylist[index].querySelectorAll('li');
           adjustPlaylist[index].style.minHeight = _this.feedPlaylistHeight;
           li.forEach((element) => {
