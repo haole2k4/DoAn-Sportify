@@ -13,14 +13,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="./scripts/script.js" defer></script>
   <script src="./scripts/dropdown.js" defer></script>
-  <script>src="./scripts/search.js"</script>
+  <script src="./scripts/search.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 </head>
 
 
 <body>
 
+  
   <div id="app" class="d-flex flex-column">
 
     <div id="principal" class="d-flex">
@@ -144,11 +147,12 @@
                   d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z">
                 </path>
               </svg></button>
-            <div class="div--hun">
+            <div class="div--hun" >
               <form class="form--hun"><input class=" cPwEdQ QO9loc33XC50mMRUCIvf" maxlength="800" autocorrect="off"
                   autocapitalize="off" spellcheck="false" placeholder="What do you want to listen to?"
-                  data-testid="search-input" value="" style="color: rgb(0, 0, 0);" id = "searchInput">
-                </form>
+                  data-testid="search-input" value="" style="color: rgb(0, 0, 0);" id = "searchInput" type = "text"/>
+              </form>
+                <div id="searchResults"></div>
             </div>
           </div>
 

@@ -1,0 +1,24 @@
+#searchResults {
+    display: none;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    background-color: #fff; /* Thêm màu nền trắng */
+    z-index: 1000; /* Đảm bảo hiển thị trên các phần tử khác */
+}
+
+.searchItem {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc; /* Thêm đường viền phân tách giữa các mục */
+}
+
+.searchItem:last-child {
+    border-bottom: none; /* Ẩn đường viền dưới của mục cuối cùng */
+}
+
+.searchItem:hover {
+    background-color: #f0f0f0;
+}
