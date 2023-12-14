@@ -28,6 +28,7 @@ function redirectToIndex() {
         return account.email === enteredEmail;
     });
     alert('Đăng nhập thành công! Welcome, ' + loggedInAccount.lastName);
+    localStorage.setItem('userName', loggedInAccount.lastName);
     console.log('Redirecting to index...');
     window.location.href = 'index.html';
 }
