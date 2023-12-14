@@ -693,3 +693,98 @@ body,
   right: -0.8em;
   bottom: -0.8em;
 }
+
+
+
+
+
+
+#searchResults {
+  display: none;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  background-color: #fff; /* Thêm màu nền trắng */
+  z-index: 1000; /* Đảm bảo hiển thị trên các phần tử khác */
+}
+
+.searchItem {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc; /* Thêm đường viền phân tách giữa các mục */
+}
+
+.searchItem:last-child {
+  border-bottom: none; /* Ẩn đường viền dưới của mục cuối cùng */
+}
+
+.searchItem:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+
+#botomIcon {
+  display: none !important;
+}
+
+@media only screen and (max-width: 770px) {
+  #latNav {
+    display: none !important;
+  }
+
+  #configAudio {
+    display: none !important;
+  }
+
+  #caixaCentral {
+    display: none !important;
+  }
+
+  #principal #feed #main .feedPlaylist .playlists {
+    height: 310px;
+  }
+
+  #principal #feed #main .feedPlaylist .playlists li {
+    width: 23%;
+  }
+
+  #audioBar #musicaPlay {
+    display: none !important;
+  }
+
+  #audioBar {
+    height: 70px !important;
+    width: 100vw !important;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+  }
+
+  #botomIcon {
+    display: unset !important;
+  }
+
+  #botomIcon a {
+    color: white;
+    font-size: 12px;
+  }
+
+  #botomIcon a svg {
+    margin: 10px;
+  }
+
+  #arrowMenu {
+    visibility: hidden;
+  }
+
+  #app {
+    min-width: 100vw;
+  }
+
+  
+}
