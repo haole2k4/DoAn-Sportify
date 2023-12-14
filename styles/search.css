@@ -411,7 +411,6 @@ body,
   height: 90px;
   background-color: #121212;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-
 }
 
 #audioBar #musicaPlay {
@@ -725,14 +724,38 @@ body,
 }
 
 
-
+#mobileNav {
+  display: none !important;
+}
 
 
 #botomIcon {
   display: none !important;
 }
 
+#principal #latNav .nav .nav-item .nav-link {
+  color: #fff;
+  fill: #fff;
+  font-size: 0.9em;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+#principal #latNav .nav .nav-item .nav-link svg {
+  margin-right: 13px;
+}
+
+#principal #latNav .nav .nav-item .nav-link.ativo,
+#principal #latNav .nav .nav-item .nav-link:hover {
+  opacity: 1;
+}
+
 @media only screen and (max-width: 770px) {
+  #mobileNav {
+    display: unset !important;
+  }
+
   #latNav {
     display: none !important;
   }
@@ -787,4 +810,23 @@ body,
   }
 
   
+}
+
+@media only screen and (max-width: 370px) {
+  #botomIcon a {
+    font-size: 10px;
+    margin: -9px;
+    padding: 18px;
+  }
+  #principal #feed #main .feedPlaylist .playlists li {
+    margin-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #botomIcon a {
+    font-size: 8px;
+    margin: -14px;
+    padding: 18px;
+  }
 }
