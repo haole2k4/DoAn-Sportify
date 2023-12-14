@@ -20,8 +20,6 @@ const playPauseButton = document.querySelector(".btn.playPause");
 let backwardButton = document.querySelector('.icones.anterior');
 let forwardButton = document.querySelector('.icones.proximo');
 
-console.log(backwardButton);
-console.log(forwardButton);
 
 var buttonVolume = document.querySelector('#button-volume-icon');
 var buttonVolumeRange = document.querySelector('.button-volume-range');
@@ -295,9 +293,15 @@ let spotifyApp = {
             songAuthor.innerText = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songArtist;
         }
 
+
+        // function checkAudioPath(audioPath) {
+        //     var pattern = /^\.\/assets\/audio\/\w+\.mp3$/;
+        //     return pattern.test(audioPath) ? 1 : 0;
+        // }
+
         function playAudio(audioname) {
             var audioPath = "./assets/audio/" + audioname + ".mp3";
-
+            
             audioSource.src = audioPath;
             audioPlayer.load();
             togglePlayPause();
