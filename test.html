@@ -1,26 +1,3 @@
-<script>
-      function renderPlaylists() {
-    const _this = this; // thay the this
-    for (let i = 0; i < feedPlaylists.length; i++) {
-      let htmls = _this.playlists[i].map(song => {
-        return `<li>
-        <img src="${song.songImg}">
-        <button type="button" class="btn me-3" onclick="playAudio(1)"><svg role="img" height="24" width="24"
-            viewBox="0 0 24 24">
-            <path 
-              d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
-            </path>
-          </svg></button>
-        <span>${song.songName}</span>
-        <p><br>${song.songArtist}</p>
-      </li>`
-        }
-      )
-      feedPlaylists[i].innerHTML = htmls;
-    }
-  },
-</script>
-
 
 
 <!-- Your top mixes -->
