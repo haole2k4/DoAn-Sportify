@@ -5,16 +5,17 @@ const hour = new Date().getHours();
 const welcomeTypes = ["Good morning", "Good afternoon", "Good evening"];
 let welcomeText = "";
 const feedPlaylist = document.querySelectorAll('.feedPlaylist');
-const imgSongRender = document.querySelector('.song-image');
-const songNameRender = document.querySelector('.song-name');
-const songAuthor = document.querySelector('.author');
+const imgSongRender = document.querySelectorAll('.song-image');
+const songNameRender = document.querySelectorAll('.song-name');
+const songAuthor = document.querySelectorAll('.author');
 const audioPlayer = document.getElementById("audioPlayer");
 const audioSource = document.getElementById("audioSource");
 const progressSlider = document.getElementById("progressSlider");
 const currentTimeElement = document.getElementById("currentTime");
 const durationElement = document.getElementById("duration");
 var isSeeking = false;
-const playPauseButton = document.querySelector(".btn.playPause");
+// const playPauseButton = document.querySelector(".btn.playPause");
+const playPauseButton = document.querySelectorAll(".btn.playPause");
 let backwardButton = document.querySelector('.icones.anterior');
 let forwardButton = document.querySelector('.icones.proximo');
 const backgroundApp = document.querySelector('#principal');
@@ -525,9 +526,12 @@ let spotifyApp = {
 
 
     function loadCurrentSong() {
-      imgSongRender.setAttribute('src', _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songImg);
-      songNameRender.innerText = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songName;
-      songAuthor.innerText = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songArtist;
+      imgSongRender[0].setAttribute('src', _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songImg);
+      imgSongRender[1].setAttribute('src', _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songImg);
+      songNameRender[0].innerText = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songName;
+      songNameRender[1].innerText = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songName;
+      songAuthor[0].innerText = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songArtist;
+      songAuthor[1].innerText = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].songArtist;
     }
 
 
@@ -544,15 +548,31 @@ let spotifyApp = {
 
 
 
-    playPauseButton.addEventListener('click', function () {
+    playPauseButton[0].addEventListener('click', function () {
       if (audioPlayer.paused) {
         // Nếu âm thanh đang được tắt, bật nó lên và cập nhật biểu tượng SVG thành biểu tượng pause
         audioPlayer.play();
-        playPauseButton.innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#fff"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>';
+        playPauseButton[0].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#fff"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>';
+        playPauseButton[1].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#fff"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>';
       } else {
         // Nếu âm thanh không bị tắt, tắt nó đi và cập nhật biểu tượng SVG thành biểu tượng play
         audioPlayer.pause();
-        playPauseButton.innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>';
+        playPauseButton[0].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>';
+        playPauseButton[1].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>';
+
+      }
+    });
+    playPauseButton[1].addEventListener('click', function () {
+      if (audioPlayer.paused) {
+        // Nếu âm thanh đang được tắt, bật nó lên và cập nhật biểu tượng SVG thành biểu tượng pause
+        audioPlayer.play();
+        playPauseButton[0].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#fff"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>';
+        playPauseButton[1].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#fff"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>';
+      } else {
+        // Nếu âm thanh không bị tắt, tắt nó đi và cập nhật biểu tượng SVG thành biểu tượng play
+        audioPlayer.pause();
+        playPauseButton[0].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>';
+        playPauseButton[1].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>';
 
       }
     });
@@ -616,11 +636,13 @@ let spotifyApp = {
       if (audioPlayer.paused) {
         // Nếu âm thanh đang được tắt, bật nó lên và cập nhật biểu tượng SVG thành biểu tượng pause
         audioPlayer.play();
-        playPauseButton.innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#fff"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>';
+        playPauseButton[0].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#fff"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>';
+        playPauseButton[1].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#fff"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>';
       } else {
         // Nếu âm thanh không bị tắt, tắt nó đi và cập nhật biểu tượng SVG thành biểu tượng play
         audioPlayer.pause();
-        playPauseButton.innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>';
+        playPauseButton[0].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>';
+        playPauseButton[1].innerHTML = '<svg role="img" height="24" width="24" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>';
       }
     }
 
