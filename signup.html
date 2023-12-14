@@ -32,7 +32,7 @@
           <hr class="gjuJVb" />
         </div>
 
-        <form id="signForm">
+        <form onsubmit="signup()">
           <div class="dUvQaU">
             <label class="Label-sc-1c0cv3r-0 jhxAUN" for="username">Username</label>
           </div>
@@ -49,13 +49,13 @@
             <label class="Label-sc-1c0cv3r-0 jhxAUN" for="confirmPassword">Confirm Password</label>
           </div>
           <input class="Input-sc-1gbx9xe-0 iFfIqr" type="password" id="confirmPassword" name="confirmPassword" required>
-
+          
         </form>
         <!-- Add error divs for each input field -->
         <div id="error-message" class="error-message"></div>
         <div class="btn--kliye">
-          <button class="btn--hunre" onclick="redirectToIndex()">SIGN UP</button>
-        </div>
+          <button type="submit" class="btn--hunre" onclick="signup(event)">SIGN UP</button>
+      </div>
         <hr class="gjuJVb" />
         <div id="sign-up-section" data-testid="signup-section">
           <p class=" izDpgk sc-furwcr kosEEf">
@@ -84,7 +84,7 @@
     
     document.addEventListener('DOMContentLoaded', function () {
       // Add event listeners to form elements for input validation
-      const form = document.querySelector('signForm');
+      const form = document.querySelector('signUpForm');
     
       const usernameInput = document.getElementById('username');
       const emailInput = document.getElementById('email');
@@ -100,9 +100,7 @@
       }
     
       // Function to clear the error message
-      function clearError(errorElement) {
-        errorElement.innerText = '';
-      }
+
     
       // Validation function for the username
       function validateUsername() {
@@ -118,14 +116,18 @@
       // Validation function for the email
       function validateEmail() {
         const emailValue = emailInput.value.trim();
-    
-        // Implement your email validation logic here (regex, etc.)
-        // For simplicity, this example only checks if the field is not empty
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (emailValue === '') {
           displayError(errorMessage, 'Email is required.');
+        } else if (!emailRegex.test(emailValue)) {
+          displayError(errorMessage, 'Invalid email format.');
         } else {
           clearError(errorMessage);
         }
+      }
+      function clearError(element) {
+        element.textContent = '';
       }
     
       // Validation function for the password
@@ -158,7 +160,25 @@
       emailInput.addEventListener('input', validateEmail);
       passwordInput.addEventListener('input', validatePassword);
       confirmPasswordInput.addEventListener('input', validateConfirmPassword);
-    });</script>
+    });
+    function signup(event) {
+      event.preventDefault
+      var firstName = "account";
+      var lastName = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+  
+      var accounts = {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password
+      }
+      var json = JSON.stringify(accounts);
+      localStorage.setItem("accounts", json);
+      alert("Đăng ký thành công");
+    }
+  </script>
   
 </body>
 
