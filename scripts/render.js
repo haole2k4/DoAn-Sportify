@@ -16,15 +16,12 @@ const currentTimeElement = document.getElementById("currentTime");
 const durationElement = document.getElementById("duration");
 var isSeeking = false;
 const playPauseButton = document.querySelector(".btn.playPause");
-
 let backwardButton = document.querySelector('.icones.anterior');
 let forwardButton = document.querySelector('.icones.proximo');
-
 const backgroundApp = document.querySelector('#principal');
-
 var buttonVolume = document.querySelector('#button-volume-icon');
 var buttonVolumeRange = document.querySelector('.button-volume-range');
-
+const userName = document.querySelector('.userName');
 
 // localStorage.setItem('playlists', JSON.stringify(
 //     [
@@ -249,49 +246,18 @@ let spotifyApp = {
         greeting.textContent = welcomeText;
     },
 
-
-
-    render: function () {
-        for (let i = 0; i < this.playlists.length; i++) {
-            const h4 = document.createElement("h4");
-            h4.classList.add("mb-3");
-            h4.innerHTML = `<a href="#"><b>${this.playlists[i].playlistName}</b></a>`;
-            const see_all = document.createElement("a");
-            see_all.classList.add("see-all");
-            see_all.innerText = "SEE-ALL";
-            const breakLine = document.createElement("br");
-            const breakLine2 = document.createElement("br");
-            const unorderedList = document.createElement("ul");
-            unorderedList.classList.add("playlists");
-            for (let j = 0; j < this.playlists[i].songs.length; j++) {
-                const li = document.createElement("li");
-                li.innerHTML = `
-              <img src="${this.playlists[i].songs[j].songImg}">
-              <button type="button" class="btn me-3"><svg role="img" height="24" width="24"
-                  viewBox="0 0 24 24">
-                  <path
-                    d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
-                  </path>
-                </svg></button>
-              <span>${this.playlists[i].songs[j].songName}</span>
-              <p><br>${this.playlists[i].songs[j].songArtist}</p>
-              `;
-
-                unorderedList.appendChild(li);
-            }
-            feedPlaylist[i].appendChild(h4);
-            feedPlaylist[i].appendChild(see_all);
-            feedPlaylist[i].appendChild(breakLine);
-            feedPlaylist[i].appendChild(breakLine2);
-            feedPlaylist[i].appendChild(unorderedList);
+    getUserName: function () {
+        let userName = localStorage.getItem('userName');
+        if (!userName) {
+            userName = 'user';
         }
+        return userName;
     },
 
-
     getPlaylists: function () {
-        let storeagePlaylists = JSON.parse(localStorage.getItem('playlists'));
-        if (storeagePlaylists === null || storeagePlaylists.length === 0) {
-            storeagePlaylists = [
+        let storagePlaylists = JSON.parse(localStorage.getItem('playlists'));
+        if (storagePlaylists === null || storagePlaylists.length === 0) {
+            storagePlaylists = [
                 {
                     playlistName: 'Your top songs',
                     premiumPlayists: false,
@@ -483,12 +449,52 @@ let spotifyApp = {
                 },
             ];
         }
-        return storeagePlaylists;
+        return storagePlaylists;
     },
 
+    
+    displayUserName: function () {
+        this.userName = this.getUserName();
+        userName.innerText = this.userName;
+    },
 
+    render: function () {
+        for (let i = 0; i < this.playlists.length; i++) {
+            const h4 = document.createElement("h4");
+            h4.classList.add("mb-3");
+            h4.innerHTML = `<a href="#"><b>${this.playlists[i].playlistName}</b></a>`;
+            const see_all = document.createElement("a");
+            see_all.classList.add("see-all");
+            see_all.innerText = "SEE-ALL";
+            const breakLine = document.createElement("br");
+            const breakLine2 = document.createElement("br");
+            const unorderedList = document.createElement("ul");
+            unorderedList.classList.add("playlists");
+            for (let j = 0; j < this.playlists[i].songs.length; j++) {
+                const li = document.createElement("li");
+                li.innerHTML = `
+              <img src="${this.playlists[i].songs[j].songImg}">
+              <button type="button" class="btn me-3"><svg role="img" height="24" width="24"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                  </path>
+                </svg></button>
+              <span>${this.playlists[i].songs[j].songName}</span>
+              <p><br>${this.playlists[i].songs[j].songArtist}</p>
+              `;
 
+                unorderedList.appendChild(li);
+            }
+            feedPlaylist[i].appendChild(h4);
+            feedPlaylist[i].appendChild(see_all);
+            feedPlaylist[i].appendChild(breakLine);
+            feedPlaylist[i].appendChild(breakLine2);
+            feedPlaylist[i].appendChild(unorderedList);
+        }
+    },
 
+    
     handleEvent: function () {
         const lis = document.querySelectorAll('.feedPlaylist li');
         const _this = this;
@@ -708,14 +714,11 @@ let spotifyApp = {
 
     start: function () {
         this.playlists = this.getPlaylists();
-
+        this.displayUserName();
         this.greeting();
         this.render();
         this.handleEvent();
     },
-
-
-
 
 }
 
