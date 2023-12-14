@@ -20,11 +20,206 @@ const playPauseButton = document.querySelector(".btn.playPause");
 let backwardButton = document.querySelector('.icones.anterior');
 let forwardButton = document.querySelector('.icones.proximo');
 
+const backgroundApp = document.querySelector('#principal');
 
 var buttonVolume = document.querySelector('#button-volume-icon');
 var buttonVolumeRange = document.querySelector('.button-volume-range');
 
 
+// localStorage.setItem('playlists', JSON.stringify(
+//     [
+//         {
+//             playlistName: 'Your top songs',
+//             premiumPlayists: false,
+//             songs: [
+//                 {
+//                     songName: 'Pop mix',
+//                     songArtist: 'SHY Martin, Lauv, Sia and more',
+//                     songImg: './assets/playlistImage/7.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'Chill Mix',
+//                     songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
+//                     songImg: './assets/playlistImage/8.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '2',
+//                 },
+//                 {
+//                     songName: 'Everything goes on',
+//                     songArtist: 'Porter Robinson, League of Legends and more',
+//                     songImg: './assets/playlistImage/everythingGoesOn.jpg',
+//                     backgroundWebColor: '#773de3',
+//                     songPath: 'everythingGoesOn',
+//                 },
+//                 {
+//                     songName: 'Latin Mix',
+//                     songArtist: 'Timothy Infinite, Shakira and more',
+//                     songImg: './assets/playlistImage/10.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'Hindi Mix',
+//                     songArtist: 'Ritviz, Nuclea, Atif Aslam and more',
+//                     songImg: './assets/playlistImage/11.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: '2010s Mix',
+//                     songArtist: 'The Fat Rat, Alan Walker, The Chainsmokers and more',
+//                     songImg: './assets/playlistImage/12.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+
+//             ]
+
+
+//         },
+//         {
+//             playlistName: 'Recently Played',
+//             premiumPlayists: false,
+//             songs: [
+//                 {
+//                     songName: 'sleep deprived',
+//                     songArtist: 'i will tell you a story before it tells itself',
+//                     songImg: './assets/playlistImage/1.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'adrenaline rush',
+//                     songArtist: 'for the night when you have piled up everything and it is deadline tomorrow',
+//                     songImg: './assets/playlistImage/2.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'impulse',
+//                     songArtist: 'the neighbors are gonna call the cops',
+//                     songImg: './assets/playlistImage/3.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'sixth gear',
+//                     songArtist: 'nothings gonna stop me now ',
+//                     songImg: './assets/playlistImage/4.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: '3:14 am',
+//                     songArtist: 'and thoughts of past and future kept him awake',
+//                     songImg: './assets/playlistImage/5.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'serenity',
+//                     songArtist: 'is it tears or just the pouring rain?',
+//                     songImg: './assets/playlistImage/6.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//             ],
+//         },
+//         {
+//             playlistName: 'Popular New releases',
+//             premiumPlayists: false,
+//             songs: [
+//                 {
+//                     songName: 'Celestial',
+//                     songArtist: 'Ed',
+//                     songImg: './assets/playlistImage/celestial.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'this Is Why',
+//                     songArtist: 'Paramore',
+//                     songImg: './assets/playlistImage/this is why.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'I GOT ISSUES',
+//                     songArtist: 'YG',
+//                     songImg: './assets/playlistImage/igotissu.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'uh oh',
+//                     songArtist: 'Tate McRae',
+//                     songImg: './assets/playlistImage/uhoh.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'Body Paint',
+//                     songArtist: 'Arctic Monkeys',
+//                     songImg: './assets/playlistImage/bodypaint.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 // playlist này chỉ có 5 songs
+//             ],
+//         },
+//         {
+//             playlistName: 'Mood',
+//             premiumPlayists: true,
+//             songs: [
+//                 {
+//                     songName: 'Mood Booster',
+//                     songArtist: 'Get happy with todays dose of feel-good songs!',
+//                     songImg: './assets/playlistImage/moodbooster.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'Feeling Good',
+//                     songArtist: 'Feel good with this positively timeless playlist!',
+//                     songImg: './assets/playlistImage/feelinggood.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'Dark & Stormy',
+//                     songArtist: 'Beautifully dark, dramatic tracks.',
+//                     songImg: './assets/playlistImage/dark&stormy.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'Feel Good Piano',
+//                     songArtist: 'Happy vibes for an upbeat morning.',
+//                     songImg: './assets/playlistImage/feelgoodpiano.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'Feeling Myself',
+//                     songArtist: 'Art By Laci Jordan; Cover: Lakeyah',
+//                     songImg: './assets/playlistImage/feelingmyself.jpg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//                 {
+//                     songName: 'Chill Tracks',
+//                     songArtist: 'Softer kinda dance.',
+//                     songImg: './assets/playlistImage/chilltracks.jpeg',
+//                     backgroundWebColor: 'rgb(4, 68, 120)',
+//                     songPath: '1',
+//                 },
+//             ],
+//         },
+//     ]
+
+// ));
 
 
 
@@ -34,7 +229,7 @@ let spotifyApp = {
     currentPlaylist: 0,
     currentSong: 0,
 
-    
+
     prevPlaylist: 0,
     prevSong: 0,
 
@@ -45,174 +240,7 @@ let spotifyApp = {
 
 
 
-    playlists: [
-        {
-            playlistName: 'Your top songs',
-            premiumPlayists: false,
-            songs: [
-                {
-                    songName: 'Pop mix',
-                    songArtist: 'SHY Martin, Lauv, Sia and more',
-                    songImg: './assets/playlistImage/7.jpeg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'Chill Mix',
-                    songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
-                    songImg: './assets/playlistImage/8.jpeg',
-                    songPath: '2',
-                },
-                {
-                    songName: 'Everything gose on',
-                    songArtist: 'Porter Robinson, League of Legends and more',
-                    songImg: './assets/playlistImage/everythingGoesOn.jpg',
-                    songPath: 'everythingGoesOn',
-                },
-                {
-                    songName: 'Latin Mix',
-                    songArtist: 'Timothy Infinite, Shakira and more',
-                    songImg: './assets/playlistImage/10.jpeg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'Hindi Mix',
-                    songArtist: 'Ritviz, Nuclea, Atif Aslam and more',
-                    songImg: './assets/playlistImage/11.jpeg',
-                    songPath: '1',
-                },
-                {
-                    songName: '2010s Mix',
-                    songArtist: 'The Fat Rat, Alan Walker, The Chainsmokers and more',
-                    songImg: './assets/playlistImage/12.jpeg',
-                    songPath: '1',
-                },
-
-            ]
-
-
-        },
-        {
-            playlistName: 'Recently Played',
-            premiumPlayists: false,
-            songs: [
-                {
-                    songName: 'sleep deprived',
-                    songArtist: 'i will tell you a story before it tells itself',
-                    songImg: './assets/playlistImage/1.jpeg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'adrenaline rush',
-                    songArtist: 'for the night when you have piled up everything and it is deadline tomorrow',
-                    songImg: './assets/playlistImage/2.jpeg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'impulse',
-                    songArtist: 'the neighbors are gonna call the cops',
-                    songImg: './assets/playlistImage/3.jpeg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'sixth gear',
-                    songArtist: 'nothings gonna stop me now ',
-                    songImg: './assets/playlistImage/4.jpeg',
-                    songPath: '1',
-                },
-                {
-                    songName: '3:14 am',
-                    songArtist: 'and thoughts of past and future kept him awake',
-                    songImg: './assets/playlistImage/5.jpeg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'serenity',
-                    songArtist: 'is it tears or just the pouring rain?',
-                    songImg: './assets/playlistImage/6.jpeg',
-                    songPath: '1',
-                },
-            ],
-        },
-        {
-            playlistName: 'Popular New releases',
-            premiumPlayists: false,
-            songs: [
-                {
-                    songName: 'Celestial',
-                    songArtist: 'Ed',
-                    songImg: './assets/playlistImage/celestial.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'this Is Why',
-                    songArtist: 'Paramore',
-                    songImg: './assets/playlistImage/this is why.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'I GOT ISSUES',
-                    songArtist: 'YG',
-                    songImg: './assets/playlistImage/igotissu.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'uh oh',
-                    songArtist: 'Tate McRae',
-                    songImg: './assets/playlistImage/uhoh.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'Body Paint',
-                    songArtist: 'Arctic Monkeys',
-                    songImg: './assets/playlistImage/bodypaint.jpg',
-                    songPath: '1',
-                },
-                // playlist này chỉ có 5 songs
-            ],
-        },
-        {
-            playlistName: 'Mood',
-            premiumPlayists: true,
-            songs: [
-                {
-                    songName: 'Mood Booster',
-                    songArtist: 'Get happy with todays dose of feel-good songs!',
-                    songImg: './assets/playlistImage/moodbooster.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'Feeling Good',
-                    songArtist: 'Feel good with this positively timeless playlist!',
-                    songImg: './assets/playlistImage/feelinggood.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'Dark & Stormy',
-                    songArtist: 'Beautifully dark, dramatic tracks.',
-                    songImg: './assets/playlistImage/dark&stormy.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'Feel Good Piano',
-                    songArtist: 'Happy vibes for an upbeat morning.',
-                    songImg: './assets/playlistImage/feelgoodpiano.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'Feeling Myself',
-                    songArtist: 'Art By Laci Jordan; Cover: Lakeyah',
-                    songImg: './assets/playlistImage/feelingmyself.jpg',
-                    songPath: '1',
-                },
-                {
-                    songName: 'Chill Tracks',
-                    songArtist: 'Softer kinda dance.',
-                    songImg: './assets/playlistImage/chilltracks.jpeg',
-                    songPath: '1',
-                },
-            ],
-        },
-    ],
+    playlists: [],
 
     greeting: function () {
         if (hour < 12) welcomeText = welcomeTypes[0];
@@ -260,6 +288,204 @@ let spotifyApp = {
     },
 
 
+    getPlaylists: function () {
+        let storeagePlaylists = JSON.parse(localStorage.getItem('playlists'));
+        if (storeagePlaylists === null || storeagePlaylists.length === 0) {
+            storeagePlaylists = [
+                {
+                    playlistName: 'Your top songs',
+                    premiumPlayists: false,
+                    songs: [
+                        {
+                            songName: 'Pop mix',
+                            songArtist: 'SHY Martin, Lauv, Sia and more',
+                            songImg: './assets/playlistImage/7.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'Chill Mix',
+                            songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
+                            songImg: './assets/playlistImage/8.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '2',
+                        },
+                        {
+                            songName: 'Everything goes on',
+                            songArtist: 'Porter Robinson, League of Legends and more',
+                            songImg: './assets/playlistImage/everythingGoesOn.jpg',
+                            backgroundWebColor: '#4c1da2',
+                            songPath: 'everythingGoesOn',
+                        },
+                        {
+                            songName: 'Latin Mix',
+                            songArtist: 'Timothy Infinite, Shakira and more',
+                            songImg: './assets/playlistImage/10.jpeg',
+                            backgroundWebColor: '#773de3',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'Hindi Mix',
+                            songArtist: 'Ritviz, Nuclea, Atif Aslam and more',
+                            songImg: './assets/playlistImage/11.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: '2010s Mix',
+                            songArtist: 'The Fat Rat, Alan Walker, The Chainsmokers and more',
+                            songImg: './assets/playlistImage/12.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+
+                    ]
+
+
+                },
+                {
+                    playlistName: 'Recently Played',
+                    premiumPlayists: false,
+                    songs: [
+                        {
+                            songName: 'sleep deprived',
+                            songArtist: 'i will tell you a story before it tells itself',
+                            songImg: './assets/playlistImage/1.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'adrenaline rush',
+                            songArtist: 'for the night when you have piled up everything and it is deadline tomorrow',
+                            songImg: './assets/playlistImage/2.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'impulse',
+                            songArtist: 'the neighbors are gonna call the cops',
+                            songImg: './assets/playlistImage/3.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'sixth gear',
+                            songArtist: 'nothings gonna stop me now ',
+                            songImg: './assets/playlistImage/4.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: '3:14 am',
+                            songArtist: 'and thoughts of past and future kept him awake',
+                            songImg: './assets/playlistImage/5.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'serenity',
+                            songArtist: 'is it tears or just the pouring rain?',
+                            songImg: './assets/playlistImage/6.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                    ],
+                },
+                {
+                    playlistName: 'Popular New releases',
+                    premiumPlayists: false,
+                    songs: [
+                        {
+                            songName: 'Celestial',
+                            songArtist: 'Ed',
+                            songImg: './assets/playlistImage/celestial.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'this Is Why',
+                            songArtist: 'Paramore',
+                            songImg: './assets/playlistImage/this is why.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'I GOT ISSUES',
+                            songArtist: 'YG',
+                            songImg: './assets/playlistImage/igotissu.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'uh oh',
+                            songArtist: 'Tate McRae',
+                            songImg: './assets/playlistImage/uhoh.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'Body Paint',
+                            songArtist: 'Arctic Monkeys',
+                            songImg: './assets/playlistImage/bodypaint.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        // playlist này chỉ có 5 songs
+                    ],
+                },
+                {
+                    playlistName: 'Mood',
+                    premiumPlayists: true,
+                    songs: [
+                        {
+                            songName: 'Mood Booster',
+                            songArtist: 'Get happy with todays dose of feel-good songs!',
+                            songImg: './assets/playlistImage/moodbooster.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'Feeling Good',
+                            songArtist: 'Feel good with this positively timeless playlist!',
+                            songImg: './assets/playlistImage/feelinggood.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'Dark & Stormy',
+                            songArtist: 'Beautifully dark, dramatic tracks.',
+                            songImg: './assets/playlistImage/dark&stormy.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'Feel Good Piano',
+                            songArtist: 'Happy vibes for an upbeat morning.',
+                            songImg: './assets/playlistImage/feelgoodpiano.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'Feeling Myself',
+                            songArtist: 'Art By Laci Jordan; Cover: Lakeyah',
+                            songImg: './assets/playlistImage/feelingmyself.jpg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                        {
+                            songName: 'Chill Tracks',
+                            songArtist: 'Softer kinda dance.',
+                            songImg: './assets/playlistImage/chilltracks.jpeg',
+                            backgroundWebColor: 'rgb(4, 68, 120)',
+                            songPath: '1',
+                        },
+                    ],
+                },
+            ];
+        }
+        return storeagePlaylists;
+    },
+
 
 
 
@@ -274,11 +500,12 @@ let spotifyApp = {
                 const liIndex = Array.from(ul.children).indexOf(li);
                 const sectionElement = li.closest('.feedPlaylist');
                 const sectionIndex = Array.from(document.querySelectorAll('.feedPlaylist')).indexOf(sectionElement);
-                const button = li.querySelector('button');
 
 
                 _this.currentPlaylist = sectionIndex;
                 _this.currentSong = liIndex;
+
+                backgroundApp.style.backgroundColor = _this.playlists[_this.currentPlaylist].songs[_this.currentSong].backgroundWebColor;
                 loadCurrentSong();
                 playAudio(_this.playlists[_this.currentPlaylist].songs[_this.currentSong].songPath);
                 _this.prevPlaylist = sectionIndex;
@@ -296,14 +523,9 @@ let spotifyApp = {
         }
 
 
-        // function checkAudioPath(audioPath) {
-        //     var pattern = /^\.\/assets\/audio\/\w+\.mp3$/;
-        //     return pattern.test(audioPath) ? 1 : 0;
-        // }
-
         function playAudio(audioname) {
             var audioPath = "./assets/audio/" + audioname + ".mp3";
-            
+
             audioSource.src = audioPath;
             audioPlayer.load();
             togglePlayPause();
@@ -474,7 +696,7 @@ let spotifyApp = {
             if (_this.currentSong > _this.playlists[_this.currentPlaylist].songs.length - 1) {
                 _this.currentSong = 0;
             }
-        
+
             loadCurrentSong();
             playAudio(_this.playlists[_this.currentPlaylist].songs[_this.currentSong].songPath);
 
@@ -488,10 +710,9 @@ let spotifyApp = {
 
 
 
-
-
-
     start: function () {
+        this.playlists = this.getPlaylists();
+
         this.greeting();
         this.render();
         this.handleEvent();
@@ -504,5 +725,8 @@ let spotifyApp = {
 
 
 
+spotifyApp.start();
 
-spotifyApp.start(); 
+
+
+

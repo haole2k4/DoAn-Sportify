@@ -174,395 +174,369 @@ progressSlider.addEventListener("touchend", function () {
 
 
 
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let playlists = [
   {
-      playlistName: 'Your top songs',
-      premiumPlayists: false,
-      songs: [
-          {
-              songName: 'Pop mix',
-              songArtist: 'SHY Martin, Lauv, Sia and more',
-              songImg: './assets/playlistImage/7.jpeg',
-              songPath: '1',
-          },
-          {
-              songName: 'Chill Mix',
-              songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
-              songImg: './assets/playlistImage/8.jpeg',
-              songPath: '2',
-          },
-          {
-              songName: 'Everything gose on',
-              songArtist: 'Porter Robinson, League of Legends and more',
-              songImg: './assets/playlistImage/everythingGoesOn.jpg',
-              songPath: 'everythingGoesOn',
-          },
-          {
-              songName: 'Latin Mix',
-              songArtist: 'Timothy Infinite, Shakira and more',
-              songImg: './assets/playlistImage/10.jpeg',
-              songPath: '1',
-          },
-          {
-              songName: 'Hindi Mix',
-              songArtist: 'Ritviz, Nuclea, Atif Aslam and more',
-              songImg: './assets/playlistImage/11.jpeg',
-              songPath: '1',
-          },
-          {
-              songName: '2010s Mix',
-              songArtist: 'The Fat Rat, Alan Walker, The Chainsmokers and more',
-              songImg: './assets/playlistImage/12.jpeg',
-              songPath: '1',
-          },
+    playlistName: 'Your top songs',
+    premiumPlayists: false,
+    songs: [
+      {
+        songName: 'Pop mix',
+        songArtist: 'SHY Martin, Lauv, Sia and more',
+        songImg: './assets/playlistImage/7.jpeg',
+        songPath: '1',
+      },
+      {
+        songName: 'Chill Mix',
+        songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
+        songImg: './assets/playlistImage/8.jpeg',
+        songPath: '2',
+      },
+      {
+        songName: 'Everything gose on',
+        songArtist: 'Porter Robinson, League of Legends and more',
+        songImg: './assets/playlistImage/everythingGoesOn.jpg',
+        songPath: 'everythingGoesOn',
+      },
+      {
+        songName: 'Latin Mix',
+        songArtist: 'Timothy Infinite, Shakira and more',
+        songImg: './assets/playlistImage/10.jpeg',
+        songPath: '1',
+      },
+      {
+        songName: 'Hindi Mix',
+        songArtist: 'Ritviz, Nuclea, Atif Aslam and more',
+        songImg: './assets/playlistImage/11.jpeg',
+        songPath: '1',
+      },
+      {
+        songName: '2010s Mix',
+        songArtist: 'The Fat Rat, Alan Walker, The Chainsmokers and more',
+        songImg: './assets/playlistImage/12.jpeg',
+        songPath: '1',
+      },
 
-      ]
+    ]
 
 
   },
   {
-      playlistName: 'Recently Played',
-      premiumPlayists: false,
-      songs: [
-          {
-              songName: 'sleep deprived',
-              songArtist: 'i will tell you a story before it tells itself',
-              songImg: './assets/playlistImage/1.jpeg',
-              songPath: '1',
-          },
-          {
-              songName: 'adrenaline rush',
-              songArtist: 'for the night when you have piled up everything and it is deadline tomorrow',
-              songImg: './assets/playlistImage/2.jpeg',
-              songPath: '1',
-          },
-          {
-              songName: 'impulse',
-              songArtist: 'the neighbors are gonna call the cops',
-              songImg: './assets/playlistImage/3.jpeg',
-              songPath: '1',
-          },
-          {
-              songName: 'sixth gear',
-              songArtist: 'nothings gonna stop me now ',
-              songImg: './assets/playlistImage/4.jpeg',
-              songPath: '1',
-          },
-          {
-              songName: '3:14 am',
-              songArtist: 'and thoughts of past and future kept him awake',
-              songImg: './assets/playlistImage/5.jpeg',
-              songPath: '1',
-          },
-          {
-              songName: 'serenity',
-              songArtist: 'is it tears or just the pouring rain?',
-              songImg: './assets/playlistImage/6.jpeg',
-              songPath: '1',
-          },
-      ],
+    playlistName: 'Recently Played',
+    premiumPlayists: false,
+    songs: [
+      {
+        songName: 'sleep deprived',
+        songArtist: 'i will tell you a story before it tells itself',
+        songImg: './assets/playlistImage/1.jpeg',
+        songPath: '1',
+      },
+      {
+        songName: 'adrenaline rush',
+        songArtist: 'for the night when you have piled up everything and it is deadline tomorrow',
+        songImg: './assets/playlistImage/2.jpeg',
+        songPath: '1',
+      },
+      {
+        songName: 'impulse',
+        songArtist: 'the neighbors are gonna call the cops',
+        songImg: './assets/playlistImage/3.jpeg',
+        songPath: '1',
+      },
+      {
+        songName: 'sixth gear',
+        songArtist: 'nothings gonna stop me now ',
+        songImg: './assets/playlistImage/4.jpeg',
+        songPath: '1',
+      },
+      {
+        songName: '3:14 am',
+        songArtist: 'and thoughts of past and future kept him awake',
+        songImg: './assets/playlistImage/5.jpeg',
+        songPath: '1',
+      },
+      {
+        songName: 'serenity',
+        songArtist: 'is it tears or just the pouring rain?',
+        songImg: './assets/playlistImage/6.jpeg',
+        songPath: '1',
+      },
+    ],
   },
   {
-      playlistName: 'Popular New releases',
-      premiumPlayists: false,
-      songs: [
-          {
-              songName: 'Celestial',
-              songArtist: 'Ed',
-              songImg: './assets/playlistImage/celestial.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'this Is Why',
-              songArtist: 'Paramore',
-              songImg: './assets/playlistImage/this is why.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'I GOT ISSUES',
-              songArtist: 'YG',
-              songImg: './assets/playlistImage/igotissu.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'uh oh',
-              songArtist: 'Tate McRae',
-              songImg: './assets/playlistImage/uhoh.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'Body Paint',
-              songArtist: 'Arctic Monkeys',
-              songImg: './assets/playlistImage/bodypaint.jpg',
-              songPath: '1',
-          },
-          // playlist này chỉ có 5 songs
-      ],
+    playlistName: 'Popular New releases',
+    premiumPlayists: false,
+    songs: [
+      {
+        songName: 'Celestial',
+        songArtist: 'Ed',
+        songImg: './assets/playlistImage/celestial.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'this Is Why',
+        songArtist: 'Paramore',
+        songImg: './assets/playlistImage/this is why.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'I GOT ISSUES',
+        songArtist: 'YG',
+        songImg: './assets/playlistImage/igotissu.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'uh oh',
+        songArtist: 'Tate McRae',
+        songImg: './assets/playlistImage/uhoh.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'Body Paint',
+        songArtist: 'Arctic Monkeys',
+        songImg: './assets/playlistImage/bodypaint.jpg',
+        songPath: '1',
+      },
+      // playlist này chỉ có 5 songs
+    ],
   },
   {
-      playlistName: 'Mood',
-      premiumPlayists: true,
-      songs: [
-          {
-              songName: 'Mood Booster',
-              songArtist: 'Get happy with todays dose of feel-good songs!',
-              songImg: './assets/playlistImage/moodbooster.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'Feeling Good',
-              songArtist: 'Feel good with this positively timeless playlist!',
-              songImg: './assets/playlistImage/feelinggood.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'Dark & Stormy',
-              songArtist: 'Beautifully dark, dramatic tracks.',
-              songImg: './assets/playlistImage/dark&stormy.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'Feel Good Piano',
-              songArtist: 'Happy vibes for an upbeat morning.',
-              songImg: './assets/playlistImage/feelgoodpiano.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'Feeling Myself',
-              songArtist: 'Art By Laci Jordan; Cover: Lakeyah',
-              songImg: './assets/playlistImage/feelingmyself.jpg',
-              songPath: '1',
-          },
-          {
-              songName: 'Chill Tracks',
-              songArtist: 'Softer kinda dance.',
-              songImg: './assets/playlistImage/chilltracks.jpeg',
-              songPath: '1',
-          },
-      ],
+    playlistName: 'Mood',
+    premiumPlayists: true,
+    songs: [
+      {
+        songName: 'Mood Booster',
+        songArtist: 'Get happy with todays dose of feel-good songs!',
+        songImg: './assets/playlistImage/moodbooster.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'Feeling Good',
+        songArtist: 'Feel good with this positively timeless playlist!',
+        songImg: './assets/playlistImage/feelinggood.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'Dark & Stormy',
+        songArtist: 'Beautifully dark, dramatic tracks.',
+        songImg: './assets/playlistImage/dark&stormy.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'Feel Good Piano',
+        songArtist: 'Happy vibes for an upbeat morning.',
+        songImg: './assets/playlistImage/feelgoodpiano.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'Feeling Myself',
+        songArtist: 'Art By Laci Jordan; Cover: Lakeyah',
+        songImg: './assets/playlistImage/feelingmyself.jpg',
+        songPath: '1',
+      },
+      {
+        songName: 'Chill Tracks',
+        songArtist: 'Softer kinda dance.',
+        songImg: './assets/playlistImage/chilltracks.jpeg',
+        songPath: '1',
+      },
+    ],
   },
 ]
-
-// đẩy mảng này lên local storeage
-// localStorage.setItem('playlists', JSON.stringify(playlists));
 
 // lấy mảng về 
 // let playlists = JSON.parse(localStorage.getItem('playlists'));
 
 function getPlaylists() {
-  let playlists = JSON.parse(localStorage.getItem('playlists'));
-  if (playlists === null || playlists.length === 0) {
-    playlists = [
+  let storeagePlaylists = JSON.parse(localStorage.getItem('playlists'));
+  if (storeagePlaylists === null || storeagePlaylists.length === 0) {
+    storeagePlaylists = [
       {
-          playlistName: 'Your top mixes',
-          premiumPlayists: false,
-          songs: [
-              {
-                  songName: 'Pop mix',
-                  songArtist: 'SHY Martin, Lauv, Sia and more',
-                  songImg: './assets/playlistImage/7.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Chill Mix',
-                  songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
-                  songImg: './assets/playlistImage/8.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Moody Mix',
-                  songArtist: 'Charlie Puth, Oh Wonder, Alec Benjamin and more',
-                  songImg: './assets/playlistImage/9.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Latin Mix',
-                  songArtist: 'Timothy Infinite, Shakira and more',
-                  songImg: './assets/playlistImage/10.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Hindi Mix',
-                  songArtist: 'Ritviz, Nuclea, Atif Aslam and more',
-                  songImg: './assets/playlistImage/11.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: '2010s Mix',
-                  songArtist: 'The Fat Rat, Alan Walker, The Chainsmokers and more',
-                  songImg: './assets/playlistImage/12.jpeg',
-                  songPath: '1',
-              },
-    
-          ]
-    
-    
+        playlistName: 'Your top songs',
+        premiumPlayists: false,
+        songs: [
+          {
+            songName: 'Pop mix',
+            songArtist: 'SHY Martin, Lauv, Sia and more',
+            songImg: './assets/playlistImage/7.jpeg',
+            songPath: '1',
+          },
+          {
+            songName: 'Chill Mix',
+            songArtist: 'Lauv, Oh Wonder, The Chainsmokers and more',
+            songImg: './assets/playlistImage/8.jpeg',
+            songPath: '2',
+          },
+          {
+            songName: 'Everything gose on',
+            songArtist: 'Porter Robinson, League of Legends and more',
+            songImg: './assets/playlistImage/everythingGoesOn.jpg',
+            songPath: 'everythingGoesOn',
+          },
+          {
+            songName: 'Latin Mix',
+            songArtist: 'Timothy Infinite, Shakira and more',
+            songImg: './assets/playlistImage/10.jpeg',
+            songPath: '1',
+          },
+          {
+            songName: 'Hindi Mix',
+            songArtist: 'Ritviz, Nuclea, Atif Aslam and more',
+            songImg: './assets/playlistImage/11.jpeg',
+            songPath: '1',
+          },
+          {
+            songName: '2010s Mix',
+            songArtist: 'The Fat Rat, Alan Walker, The Chainsmokers and more',
+            songImg: './assets/playlistImage/12.jpeg',
+            songPath: '1',
+          },
+
+        ]
+
+
       },
       {
-          playlistName: 'Recently Played',
-          premiumPlayists: false,
-          songs: [
-              {
-                  songName: 'sleep deprived',
-                  songArtist: 'i will tell you a story before it tells itself',
-                  songImg: './assets/playlistImage/1.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'adrenaline rush',
-                  songArtist: 'for the night when you have piled up everything and it is deadline tomorrow',
-                  songImg: './assets/playlistImage/2.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'impulse',
-                  songArtist: 'the neighbors are gonna call the cops',
-                  songImg: './assets/playlistImage/3.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'sixth gear',
-                  songArtist: 'nothings gonna stop me now ',
-                  songImg: './assets/playlistImage/4.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: '3:14 am',
-                  songArtist: 'and thoughts of past and future kept him awake',
-                  songImg: './assets/playlistImage/5.jpeg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'serenity',
-                  songArtist: 'is it tears or just the pouring rain?',
-                  songImg: './assets/playlistImage/6.jpeg',
-                  songPath: '1',
-              },
-          ],
+        playlistName: 'Recently Played',
+        premiumPlayists: false,
+        songs: [
+          {
+            songName: 'sleep deprived',
+            songArtist: 'i will tell you a story before it tells itself',
+            songImg: './assets/playlistImage/1.jpeg',
+            songPath: '1',
+          },
+          {
+            songName: 'adrenaline rush',
+            songArtist: 'for the night when you have piled up everything and it is deadline tomorrow',
+            songImg: './assets/playlistImage/2.jpeg',
+            songPath: '1',
+          },
+          {
+            songName: 'impulse',
+            songArtist: 'the neighbors are gonna call the cops',
+            songImg: './assets/playlistImage/3.jpeg',
+            songPath: '1',
+          },
+          {
+            songName: 'sixth gear',
+            songArtist: 'nothings gonna stop me now ',
+            songImg: './assets/playlistImage/4.jpeg',
+            songPath: '1',
+          },
+          {
+            songName: '3:14 am',
+            songArtist: 'and thoughts of past and future kept him awake',
+            songImg: './assets/playlistImage/5.jpeg',
+            songPath: '1',
+          },
+          {
+            songName: 'serenity',
+            songArtist: 'is it tears or just the pouring rain?',
+            songImg: './assets/playlistImage/6.jpeg',
+            songPath: '1',
+          },
+        ],
       },
       {
-          playlistName: 'Popular New releases',
-          premiumPlayists: false,
-          songs: [
-              {
-                  songName: 'Celestial',
-                  songArtist: 'Ed',
-                  songImg: './assets/playlistImage/celestial.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'this Is Why',
-                  songArtist: 'Paramore',
-                  songImg: './assets/playlistImage/this is why.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'I GOT ISSUES',
-                  songArtist: 'YG',
-                  songImg: './assets/playlistImage/igotissu.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'uh oh',
-                  songArtist: 'Tate McRae',
-                  songImg: './assets/playlistImage/uhoh.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Body Paint',
-                  songArtist: 'Arctic Monkeys',
-                  songImg: './assets/playlistImage/bodypaint.jpg',
-                  songPath: '1',
-              },
-              // playlist này chỉ có 5 songs
-          ],
+        playlistName: 'Popular New releases',
+        premiumPlayists: false,
+        songs: [
+          {
+            songName: 'Celestial',
+            songArtist: 'Ed',
+            songImg: './assets/playlistImage/celestial.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'this Is Why',
+            songArtist: 'Paramore',
+            songImg: './assets/playlistImage/this is why.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'I GOT ISSUES',
+            songArtist: 'YG',
+            songImg: './assets/playlistImage/igotissu.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'uh oh',
+            songArtist: 'Tate McRae',
+            songImg: './assets/playlistImage/uhoh.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'Body Paint',
+            songArtist: 'Arctic Monkeys',
+            songImg: './assets/playlistImage/bodypaint.jpg',
+            songPath: '1',
+          },
+          // playlist này chỉ có 5 songs
+        ],
       },
       {
-          playlistName: 'Mood',
-          premiumPlayists: true,
-          songs: [
-              {
-                  songName: 'Mood Booster',
-                  songArtist: 'Get happy with todays dose of feel-good songs!',
-                  songImg: './assets/playlistImage/moodbooster.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Feeling Good',
-                  songArtist: 'Feel good with this positively timeless playlist!',
-                  songImg: './assets/playlistImage/feelinggood.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Dark & Stormy',
-                  songArtist: 'Beautifully dark, dramatic tracks.',
-                  songImg: './assets/playlistImage/dark&stormy.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Feel Good Piano',
-                  songArtist: 'Happy vibes for an upbeat morning.',
-                  songImg: './assets/playlistImage/feelgoodpiano.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Feeling Myself',
-                  songArtist: 'Art By Laci Jordan; Cover: Lakeyah',
-                  songImg: './assets/playlistImage/feelingmyself.jpg',
-                  songPath: '1',
-              },
-              {
-                  songName: 'Chill Tracks',
-                  songArtist: 'Softer kinda dance.',
-                  songImg: './assets/playlistImage/chilltracks.jpeg',
-                  songPath: '1',
-              },
-          ],
+        playlistName: 'Mood',
+        premiumPlayists: true,
+        songs: [
+          {
+            songName: 'Mood Booster',
+            songArtist: 'Get happy with todays dose of feel-good songs!',
+            songImg: './assets/playlistImage/moodbooster.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'Feeling Good',
+            songArtist: 'Feel good with this positively timeless playlist!',
+            songImg: './assets/playlistImage/feelinggood.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'Dark & Stormy',
+            songArtist: 'Beautifully dark, dramatic tracks.',
+            songImg: './assets/playlistImage/dark&stormy.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'Feel Good Piano',
+            songArtist: 'Happy vibes for an upbeat morning.',
+            songImg: './assets/playlistImage/feelgoodpiano.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'Feeling Myself',
+            songArtist: 'Art By Laci Jordan; Cover: Lakeyah',
+            songImg: './assets/playlistImage/feelingmyself.jpg',
+            songPath: '1',
+          },
+          {
+            songName: 'Chill Tracks',
+            songArtist: 'Softer kinda dance.',
+            songImg: './assets/playlistImage/chilltracks.jpeg',
+            songPath: '1',
+          },
+        ],
       },
     ];
   }
-  return playlists;
+  return storeagePlaylists;
 }
 
 const feedPlaylist = document.querySelectorAll('.feedPlaylist');
 function renderPlaylist() {
   for (let i = 0; i < playlists.length; i++) {
-      const h4 = document.createElement("h4");
-      h4.classList.add("mb-3");
-      h4.innerHTML = `<a href="#"><b>${playlists[i].playlistName}</b></a>`;
-      const see_all = document.createElement("a");
-      see_all.classList.add("see-all");
-      see_all.innerText = "SEE-ALL";
-      const breakLine = document.createElement("br");
-      const breakLine2 = document.createElement("br");
-      const unorderedList = document.createElement("ul");
-      unorderedList.classList.add("playlists");
-      for (let j = 0; j < playlists[i].songs.length; j++) {
-          const li = document.createElement("li");
-          li.innerHTML = `
+    const h4 = document.createElement("h4");
+    h4.classList.add("mb-3");
+    h4.innerHTML = `<a href="#"><b>${playlists[i].playlistName}</b></a>`;
+    const see_all = document.createElement("a");
+    see_all.classList.add("see-all");
+    see_all.innerText = "SEE-ALL";
+    const breakLine = document.createElement("br");
+    const breakLine2 = document.createElement("br");
+    const unorderedList = document.createElement("ul");
+    unorderedList.classList.add("playlists");
+    for (let j = 0; j < playlists[i].songs.length; j++) {
+      const li = document.createElement("li");
+      li.innerHTML = `
       <img src="${playlists[i].songs[j].songImg}">
       <button type="button" class="btn me-3"><svg role="img" height="24" width="24"
           viewBox="0 0 24 24">
@@ -573,14 +547,14 @@ function renderPlaylist() {
       <span>${playlists[i].songs[j].songName}</span>
       <p><br>${playlists[i].songs[j].songArtist}</p>
       `;
-          // li.setAttribute('onclick', 'playAudio(1)');
-          unorderedList.appendChild(li);
-      }
-      feedPlaylist[i].appendChild(h4);
-      feedPlaylist[i].appendChild(see_all);
-      feedPlaylist[i].appendChild(breakLine);
-      feedPlaylist[i].appendChild(breakLine2);
-      feedPlaylist[i].appendChild(unorderedList);
+      // li.setAttribute('onclick', 'playAudio(1)');
+      unorderedList.appendChild(li);
+    }
+    feedPlaylist[i].appendChild(h4);
+    feedPlaylist[i].appendChild(see_all);
+    feedPlaylist[i].appendChild(breakLine);
+    feedPlaylist[i].appendChild(breakLine2);
+    feedPlaylist[i].appendChild(unorderedList);
   }
 }
 window.onload = renderPlaylist();
@@ -597,23 +571,23 @@ const lis = document.querySelectorAll('.feedPlaylist li');
 
 
 lis.forEach((li) => {
-li.addEventListener('click', () => {
-  const ul = li.parentNode;
-  const liIndex = Array.from(ul.children).indexOf(li);
-  const sectionElement = li.closest('.feedPlaylist');
-  const sectionIndex = Array.from(document.querySelectorAll('.feedPlaylist')).indexOf(sectionElement);
-  const button = li.querySelector('button');
-  button.innerHTML = `<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#1ed760"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>`;
-  button.style.opacity = "1";
+  li.addEventListener('click', () => {
+    const ul = li.parentNode;
+    const liIndex = Array.from(ul.children).indexOf(li);
+    const sectionElement = li.closest('.feedPlaylist');
+    const sectionIndex = Array.from(document.querySelectorAll('.feedPlaylist')).indexOf(sectionElement);
+    const button = li.querySelector('button');
+    button.innerHTML = `<svg role="img" height="24" width="24" viewBox="0 0 24 24"> <rect width="24" height="24" fill="#1ed760"></rect> <path d="M6 4h4v16H6zm8 0h4v16h-4z" fill="#000"></path></svg>`;
+    button.style.opacity = "1";
 
-  playAudio(playlists[sectionIndex].songs[liIndex].songPath);
+    playAudio(playlists[sectionIndex].songs[liIndex].songPath);
 
 
-  imgSongRender.setAttribute('src', playlists[sectionIndex].songs[liIndex].songImg);
-  songNameRender.innerText =  playlists[sectionIndex].songs[liIndex].songName;
-  songAuthor.innerText =  playlists[sectionIndex].songs[liIndex].songArtist;
-  
-});
+    imgSongRender.setAttribute('src', playlists[sectionIndex].songs[liIndex].songImg);
+    songNameRender.innerText = playlists[sectionIndex].songs[liIndex].songName;
+    songAuthor.innerText = playlists[sectionIndex].songs[liIndex].songArtist;
+
+  });
 });
 
 

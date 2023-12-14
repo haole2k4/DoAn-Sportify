@@ -34,6 +34,7 @@ body,
 
 #principal {
   background-color: rgb(4, 68, 120);
+  /* background-color: #4c1da2; */
   transition: background-color 1s ease;
   color: #fff;
 }
