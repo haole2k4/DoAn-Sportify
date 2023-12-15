@@ -1,6 +1,6 @@
 let userName = '';
 let playlists = [];
-// const userNameDisplay = document.querySelector('.userName');
+const userNameDisplay = document.querySelector('.userName');
 // let valueSearchInput = document.getElementById("searchInput").value;
 let searchResult = document.querySelector('.playlists');
 
@@ -237,7 +237,8 @@ function searchBySongName() {
     });
 
 
-    console.log(filteredPlaylists);
+    // console.log(filteredPlaylists);
+    // console.log(playlists);
 
     searchResult.innerHTML = '';
     if (filteredPlaylists.length === 0) {
