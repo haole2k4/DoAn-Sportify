@@ -14,7 +14,7 @@
         <div class="d-block my-5">
 
             <h2>Wellcome Admin</h2>
-            <button class="btn btn-sm btn-success">Log Out</button>
+            <button class="btn btn-sm btn-success" onclick="window.location.href='login.html'">Log Out</button>
         </div>
 
 
@@ -78,6 +78,12 @@
                 // Trả về mảng mặc định tạo sẵn nếu local storage bị rỗng
                 return [
                     {
+                        firstName: 'admin',
+                        lastName: 'admin',
+                        email: 'admin@gmail.com',
+                        password: 'admin1',
+                    },
+                    {
                         firstName: "Nakano",
                         lastName: "Ichika",
                         email: "user1@gmail.com",
@@ -107,6 +113,7 @@
                         email: "user5@gmail.com",
                         password: "password1",
                     },
+
                 ];
             }
             let accounts = JSON.parse(string);
@@ -157,47 +164,49 @@
             localStorage.setItem('premiumAccounts', string);
         }
 
-        let accounts = [
-            {
-                firstName: "Nakano",
-                lastName: "Ichika",
-                email: "user1@gmail.com",
-                password: "password1",
-            },
-            {
-                firstName: "Nakano",
-                lastName: "Nino",
-                email: "user2@gmail.com",
-                password: "password1",
-            },
-            {
-                firstName: "Nakano",
-                lastName: "Miku",
-                email: "user3@gmail.com",
-                password: "password1",
-            },
-            {
-                firstName: "Nakano",
-                lastName: "Yotsuba",
-                email: "user4@gmail.com",
-                password: "password1",
-            },
-            {
-                firstName: "Nakano",
-                lastName: "Itsuki",
-                email: "user5@gmail.com",
-                password: "password1",
-            },
-        ];
+        // let accounts = [
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Ichika",
+        //         email: "user1@gmail.com",
+        //         password: "password1",
+        //     },
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Nino",
+        //         email: "user2@gmail.com",
+        //         password: "password1",
+        //     },
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Miku",
+        //         email: "user3@gmail.com",
+        //         password: "password1",
+        //     },
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Yotsuba",
+        //         email: "user4@gmail.com",
+        //         password: "password1",
+        //     },
+        //     {
+        //         firstName: "Nakano",
+        //         lastName: "Itsuki",
+        //         email: "user5@gmail.com",
+        //         password: "password1",
+        //     },
+        // ];
+
+        let accounts = getAccountsFromLocalStorage();
 
         function displayDataTable() {
             const table = document.querySelector('.data-user');
-
-            for (let i = 0; i < accounts.length; i++) {
+            // khi co admin thi hide cai dau
+            for (let i = 1; i < accounts.length; i++) {
                 const row = table.insertRow(-1);
 
                 const sttCell = row.insertCell(0);
-                sttCell.innerHTML = i + 1;
+                sttCell.innerHTML = i;
 
                 const firstNameCell = row.insertCell(1);
                 firstNameCell.innerHTML = accounts[i].firstName;

@@ -30,5 +30,11 @@ function redirectToIndex() {
     alert('Đăng nhập thành công! Welcome, ' + loggedInAccount.lastName);
     localStorage.setItem('userName', loggedInAccount.lastName);
     console.log('Redirecting to index...');
-    window.location.href = 'index.html';
+    if (loggedInAccount.lastName == 'admin') {
+        window.location.href = 'admin.html';
+    }
+    else {
+        window.location.href = 'index.html';
+
+    }
 }

@@ -82,6 +82,12 @@
         // Trả về mảng mặc định tạo sẵn nếu local storage bị rỗng
         return [
           {
+            firstName: 'admin',
+            lastName: 'admin',
+            email: 'admin@gmail.com',
+            password: 'admin1',
+          },
+          {
             firstName: "Nakano",
             lastName: "Ichika",
             email: "user1@gmail.com",
@@ -111,6 +117,7 @@
             email: "user5@gmail.com",
             password: "password1",
           },
+
         ];
       }
       let accountsLS = JSON.parse(string);
