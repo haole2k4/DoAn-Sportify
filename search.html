@@ -14,9 +14,9 @@
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="./scripts/script.js" defer></script>
+  <!-- <script src="./scripts/script.js" defer></script> -->
   <script src="./scripts/dropdown.js" defer></script>
-  <script src="./scripts/search.js" defer></script>
+  <script src="./scripts/search2.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 </head>
 
@@ -148,10 +148,11 @@
                 </path>
               </svg></button>
             <div class="div--hun">
-              <form class="form--hun"><input class=" cPwEdQ QO9loc33XC50mMRUCIvf" maxlength="800" autocorrect="off"
+              <form class="form--hun">
+                <input class=" cPwEdQ QO9loc33XC50mMRUCIvf" maxlength="800" autocorrect="off"
                   autocapitalize="off" spellcheck="false" placeholder="What do you want to listen to?"
-                  data-testid="search-input" value="" style="color: rgb(0, 0, 0);" id="searchInput" type="text" />
-              </form>
+                  data-testid="search-input" value="" style="color: rgb(0, 0, 0);" id="searchInput" type="text" oninput="searchBySongName()"/>
+              </form  >
               <div id="searchResults"></div>
             </div>
           </div>
@@ -171,7 +172,7 @@
                       d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                   </svg>
                 </div>
-                Quyt's
+                <span class="userName">Quyt's</span>
               </button>
               <div class="dropdownMenuButton1-dropContent">
                 <a href="./login.html">Log Out</a>
@@ -192,7 +193,7 @@
 
 
             <section class="feedPlaylist">
-              <h4 class="mb-3"><a><b>Recent Searches</b></a></h4>
+              <h4 class="mb-3"><a><b>Searches</b></a></h4>
 
               <br>
               <ul class="playlists">
@@ -265,9 +266,9 @@
             </section>
 
 
-
+            <!-- class="feedPlaylist" -->
             <!-- Made for you -->
-            <section class="feedPlaylist">
+            <section >
               <h4 class="mb-3"><a href="#">Browse all</a></h4>
               <div class="searching-recommend">
                 <div class="searching-section">

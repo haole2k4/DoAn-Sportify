@@ -284,9 +284,10 @@ body,
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   overflow-y: hidden;
   height: 380px;
+  /* min-height: 1000px; */
 }
 
 #principal #feed #main .feedPlaylist .playlists li {
@@ -298,7 +299,9 @@ body,
   cursor: pointer;
   transition: background-color 0.3s;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  /* height: 28%; */
+  margin-right: 1.6%;
 }
 
 #principal #feed #main .feedPlaylist .playlists li img {
@@ -393,6 +396,8 @@ body,
 
   #principal #feed #main .feedPlaylist .playlists li {
     width: 32%;
+    margin-right: 1.3%;
+
   }
 }
 
