@@ -49,13 +49,13 @@
             <label class="Label-sc-1c0cv3r-0 jhxAUN" for="confirmPassword">Confirm Password</label>
           </div>
           <input class="Input-sc-1gbx9xe-0 iFfIqr" type="password" id="confirmPassword" name="confirmPassword" required>
-          
+
         </form>
         <!-- Add error divs for each input field -->
         <div id="error-message" class="error-message"></div>
         <div class="btn--kliye">
           <button type="submit" class="btn--hunre" onclick="signup(event)">SIGN UP</button>
-      </div>
+        </div>
         <hr class="gjuJVb" />
         <div id="sign-up-section" data-testid="signup-section">
           <p class=" izDpgk sc-furwcr kosEEf">
@@ -74,45 +74,91 @@
   </div>
   <script src="https://kit.fontawesome.com/55973b77b0.js" crossorigin="anonymous"></script>
   <script>
+    let accounts = [];
+
+    function getAccountsFromLocalStorage() {
+      let string = localStorage.getItem('accounts');
+      if (string == null || string === '') {
+        // Trả về mảng mặc định tạo sẵn nếu local storage bị rỗng
+        return [
+          {
+            firstName: "Nakano",
+            lastName: "Ichika",
+            email: "user1@gmail.com",
+            password: "password1",
+          },
+          {
+            firstName: "Nakano",
+            lastName: "Nino",
+            email: "user2@gmail.com",
+            password: "password1",
+          },
+          {
+            firstName: "Nakano",
+            lastName: "Miku",
+            email: "user3@gmail.com",
+            password: "password1",
+          },
+          {
+            firstName: "Nakano",
+            lastName: "Yotsuba",
+            email: "user4@gmail.com",
+            password: "password1",
+          },
+          {
+            firstName: "Nakano",
+            lastName: "Itsuki",
+            email: "user5@gmail.com",
+            password: "password1",
+          },
+        ];
+      }
+      let accountsLS = JSON.parse(string);
+      return accountsLS;
+    }
+
+    accounts = getAccountsFromLocalStorage();
+
+
     function redirectToIndex() {
       window.location.href = 'index.html';
     }
-    
+
     function redirectToLogin() {
       window.location.href = 'login.html';
     }
-    
+
     document.addEventListener('DOMContentLoaded', function () {
       // Add event listeners to form elements for input validation
       const form = document.querySelector('signUpForm');
-    
+
       const usernameInput = document.getElementById('username');
       const emailInput = document.getElementById('email');
       const passwordInput = document.getElementById('password');
       const confirmPasswordInput = document.getElementById('confirmPassword');
-    
+
       // Error message divs
       const errorMessage = document.getElementById('error-message');
-    
+
       // Function to display an error message
       function displayError(errorElement, errorMessage) {
         errorElement.innerText = errorMessage;
       }
-    
+
       // Function to clear the error message
 
-    
+
       // Validation function for the username
       function validateUsername() {
         const usernameValue = usernameInput.value.trim();
-    
+
         if (usernameValue === '') {
           displayError(errorMessage, 'Username is required.');
         } else {
           clearError(errorMessage);
         }
       }
-    
+
       // Validation function for the email
       function validateEmail() {
         const emailValue = emailInput.value.trim();
@@ -129,11 +175,11 @@
       function clearError(element) {
         element.textContent = '';
       }
-    
+
       // Validation function for the password
       function validatePassword() {
         const passwordValue = passwordInput.value;
-    
+
         // Implement your password validation logic here
         if (passwordValue.length < 8) {
           displayError(errorMessage, 'Password must be at least 8 characters.');
@@ -141,12 +187,12 @@
           clearError(errorMessage);
         }
       }
-    
+
       // Validation function for the confirm password
       function validateConfirmPassword() {
         const confirmPasswordValue = confirmPasswordInput.value;
         const passwordValue = passwordInput.value;
-    
+
         // Implement your confirm password validation logic here
         if (confirmPasswordValue !== passwordValue) {
           displayError(errorMessage, 'Passwords do not match.');
@@ -154,7 +200,7 @@
           clearError(errorMessage);
         }
       }
-    
+
       // Add input event listeners for real-time validation
       usernameInput.addEventListener('input', validateUsername);
       emailInput.addEventListener('input', validateEmail);
@@ -167,21 +213,24 @@
       var lastName = document.getElementById("username").value;
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
-  
-      var accounts = {
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          password: password
+
+      var newAccount = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password
       }
+
+      accounts.push(newAccount);
+
       var json = JSON.stringify(accounts);
       localStorage.setItem("accounts", json);
       alert("Đăng ký thành công! Chào mừng bạn, " + lastName);
-      localStorage.setItem('userName', lastName);
+      localStorage.setItem('userName', newAccount.lastName);
       window.location.href = "index.html";
     }
   </script>
-  
+
 </body>
 
 </html>
